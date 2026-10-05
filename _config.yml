@@ -1,0 +1,9 @@
+title: n0nn.us
+description: Updates, musings, and notes from the scriptorium.
+url: https://n0nn.us
+permalink: /:year/:month/:title/
+plugins:
+  - jekyll-feed
+defaults:
+  - scope: { type: posts }
+    values: { layout: post }

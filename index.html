@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<section class="mast" aria-label="{{ site.title }}">
+  <h1 class="glyph">n0nn.us<span class="cursor" aria-hidden="true"></span></h1>
+  <p class="lede">{{ site.description }}</p>
+</section>
+
+<section class="log">
+  <p class="cmd">$ ls -t posts/</p>
+  {% if site.posts.size > 0 %}
+  <ol reversed>
+    {% for post in site.posts %}
+    <li>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ol>
+  {% else %}
+  <p>No posts yet. Add a Markdown file to <code>_posts/</code> to publish the first one.</p>
+  {% endif %}
+</section>

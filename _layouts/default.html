@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+<meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%230f1328'/><rect x='4' y='3' width='8' height='10' fill='%23e5483b'/></svg>">
+{% feed_meta %}
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <a href="{{ '/' | relative_url }}" class="home">~/n0nn.us</a>
+  <nav><a href="{{ '/feed.xml' | relative_url }}">rss</a></nav>
+</header>
+<main id="main">
+{{ content }}
+</main>
+<footer class="bar">
+  <span>EOF reached. Nothing else to read, for now.</span>
+</footer>
+</body>
+</html>
